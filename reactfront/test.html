@@ -75,6 +75,9 @@
     const newUsers = users.map(u=>u.id===updateUserDto.id?{...u, ...updateUserDto}:u); // const newUsers = {...users};
     console.log("newUsers",newUsers);
 
+    // 배열로 만들 때?
+    let nums = Array.from({length:5}).map(()=>5);
+    console.log(nums);
 
 </script>
 </body>
