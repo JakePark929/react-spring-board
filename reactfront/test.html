@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // concat, filter, map, slice, 스프레드(전개) 연산자
+    console.log("==== 1. 스프레드 연산자 ... ===="); // 깊은복사 할 때 씀!
+    const a = [1, 2, 3]; // 배열
+    // const b = a; // 얕은복사
+    const b = [...a]; // 배열안에 spread 함 [1,2,3]
+    b.push(4); // 기존 배열의 값을 수정. b의 데이터 변경
+    console.log(`a의 값은:${a}`); // 1,2,3
+    console.log(`b의 값은:${b}`); // 1,2,3,4
+    // java 에서 배열 복사 하려면 for문 돌림 stream으로는 쉽게함
+
+    console.log("==== 2. 추가하기 concat() ====");
+    // 기존데이터에 추가하는 것이 아니라 새로운 데이터를 만들어 내면서..
+    const a2 = [1, 2, 3];
+    const b2 = a2.concat(4); // a에 적용없이 깊은 복사 된것! push는 변함..
+    console.log(`a2의 값은:${a2}`);
+    console.log(`b2의 값은:${b2}`);
+    const c2 = [0, ...a2, 4]; // concat 같은 역할.. 앞 뒤에 다 넣을 수 있음, 사이에는 건드릴 수 있나?
+    console.log(`c2의 값은:${c2}`); // 0,1,2,3,4
+
+    console.log("==== 3. 걸러내기 filter() ===="); // DOM에서 element를 삭제할 때 쓸 수 있다!
+    const a3 = [1, 2, 3];
+    const b3 = a3.filter((n) => {
+        return n != 1;
+    }); // bool을 return받음. -> true만 걸러낸다.
+    console.log(`b3의 값은:${b3}`);
+
+    console.log("==== 4. 잘라내기 slice() ===="); // 잘라내서 concat이랑 사용하면 중간에 삽입가능
+    const a4 = [1, 2, 3];
+    const b4 = a4.slice(0, 2);
+    console.log(b4); // [1,2]
+    const c4 = [a4.slice(0, 2)];
+    console.log(c4); // [[1,2]]
+    const d4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)];
+    console.log(d4);
+
+    console.log("==== 5. 반복하기 map() ====");
+    const a5 = [1, 2, 3];
+    // for(let i=0; i<a5.length; i++) {
+    //     console.log(a5[i]);
+    // }
+    const c5 = a5.forEach((n) => { console.log(n); }); // 리턴 못함.
+    // console.log(c5); // undefined
+    const b5 = a5.map((n) => { return n + 10 }); // const b5 = [...a5]; 값 하나하나를 가공할 수 있음
+    console.log(b5);
+
+    console.log("==== 6. 수정하기 ====");
+    const data = {phone:2222};
+    const a6 = {id: 1, name: "홍길동",phone:"1111",age:17,gender:"남"};
+    // const b6 = {...a6, name: "임꺽정"}; // 깊은 복사
+    // const b6 = {...a6, ...data};
+    const b6 = {...data, ...a6};
+    console.log(b6);
+
+    const users = [
+        {id: 1, name: "홍길동", phone: "2222"},
+        {id: 2, name: "임꺽정", phone: "3333"},
+        {id: 3, name: "이순신", phone: "4444"}
+    ];
+
+    const updateUserDto = {
+        id: 2, name: "임재범"
+    }
+
+    // users[1].name=updateUserDto.name;
+    // console.log(users);
+
+    const newUsers = users.map(u=>u.id===updateUserDto.id?{...u, ...updateUserDto}:u); // const newUsers = {...users};
+    console.log("newUsers",newUsers);
+
+    // 배열로 만들 때?
+    let nums = Array.from({length:5}).map(()=>5);
+    console.log(nums);
+
+</script>
+</body>
+</html>
