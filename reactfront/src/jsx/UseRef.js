@@ -1,11 +1,12 @@
 import React, {createRef, useRef, useState} from 'react';
+import {Title} from "./myCss";
 
 // useRef (디자인)
 // dom을 변경할 때 사용
 
-const a= { // 디자인을 만들때 함수안에 만드는 것은 좋지 않다. 정적이기 때문
-    backgroundColor :'red', 
-}
+// const a= { // 디자인을 만들때 함수안에 만드는 것은 좋지 않다. 정적이기 때문
+//     backgroundColor :'red',
+// }
 
 const UseRef = () => {
     const myRef = useRef(null);
@@ -31,8 +32,8 @@ const UseRef = () => {
             {list.map((user,index)=>(
                 <p ref={myRefs[index]}>{user.name}</p>
             ))}
-            <div style={a}>확인</div>
-            <div className="box-style">헬로</div>
+            <Title>확인</Title>
+            {/*<div className="box-style">헬로</div>*/}
         </div>
     );
 };
