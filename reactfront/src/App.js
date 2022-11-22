@@ -1,10 +1,18 @@
 import './App.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ListPage from "./pages/ListPage";
+import React, {useState} from 'react';
+import Bottom from "./components/redux/Bottom";
+import Top from "./components/redux/Top";
 
 function App() {
     // App이 상태를 들고 있으면 됨?
+    // const [number, setNumber] = useState(1);
+    //
+    // const addNumber = () => {
+    //     setNumber(number+1);
+    // }
+
     return (
         <div>
             <Header/>
@@ -17,7 +25,11 @@ function App() {
                 {/*<Route path="/write" exact={true} element={<WritePage/>}/>*/}
             {/*</Routes>*/}
             {/*<ListPage/>*/}
-            <h1>최상단화면</h1>
+            <div className='container'>
+                <h1>최상단화면</h1>
+                <Top/>
+                <Bottom/>
+            </div>
             <Footer/>
         </div>
     );
