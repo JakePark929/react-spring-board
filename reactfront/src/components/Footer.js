@@ -5,12 +5,13 @@ import styled from "styled-components";
 // styled-components=> js파일과 css파일이 합쳐져서 관리!
 const StyledFooterDiv = styled.div`
   border: 1px solid red;
-  height: 300px;
+  height: 200px;
 `
 
 const Footer = () => {
     return (
         <div>
+            <br/>
             <StyledFooterDiv>
                 Contact Us
                 <ul>
