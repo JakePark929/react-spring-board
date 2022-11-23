@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {Button} from "react-bootstrap";
+import {useSelector} from "react-redux";
 
 const DetailPage = () => {
+    const {url} = useSelector((store) => store);
     const id = useParams().id;
     const navigate = useNavigate();
     const [book, setBook] = useState({
@@ -12,7 +14,7 @@ const DetailPage = () => {
     });
 
     useEffect(() => {
-        fetch("http://localhost:8080/book/" + id)
+        fetch(url + "/" + id)
             .then(res => res.json())
             .then(res => {
                 // setBook({...book});
@@ -21,7 +23,7 @@ const DetailPage = () => {
     }, []);
 
     const deleteBook = () => {
-        fetch("http://localhost:8080/book/" + id, {
+        fetch(url + "/" + id, {
             method: "DELETE",
         })
             .then(res => res.text())

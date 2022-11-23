@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {Button, Form} from "react-bootstrap";
+import {useSelector} from "react-redux";
 
 const UpdateForm = () => {
+    const {url} = useSelector((store) => store);
     const id = useParams().id;
     const navigate = useNavigate();
     const [book, setBook] = useState({
@@ -11,7 +13,7 @@ const UpdateForm = () => {
     });
 
     useEffect(() => {
-        fetch("http://localhost:8080/book/" + id)
+        fetch(url + "/" + id)
             .then(res => res.json())
             .then(res => {
                 // setBook({...book});
@@ -28,7 +30,7 @@ const UpdateForm = () => {
 
     const submitBook = (e) => {
         e.preventDefault(); // submit이 action을 안타고 자기 할일을 그만함.
-        fetch("http://localhost:8080/book/"+id, {
+        fetch(url + "/" + id, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
@@ -46,7 +48,7 @@ const UpdateForm = () => {
             .then(res => { // Catch는 여기서 오류가 나야 실행됨
                 console.log("정상", res);
                 if (res !== null) {
-                    navigate("/book/"+id);
+                    navigate("/book/" + id);
                 } else {
                     alert("파일 수정에 실패하였습니다.");
                 }

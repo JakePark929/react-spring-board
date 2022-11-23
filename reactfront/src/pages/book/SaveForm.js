@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import {Button, Form} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const SaveForm = () => {
+    const {url} = useSelector((store) => store);
     const navigate = useNavigate();
     const [book, setBook] = useState({
         title: "",
@@ -18,7 +20,7 @@ const SaveForm = () => {
 
     const submitBook = (e) => {
         e.preventDefault(); // submit이 action을 안타고 자기 할일을 그만함.
-        fetch("http://localhost:8080/book", {
+        fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"

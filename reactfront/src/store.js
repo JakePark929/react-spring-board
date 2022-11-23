@@ -5,6 +5,7 @@ export const decrease = (username) => ({type: "DECREMENT", payload: username});
 // State
 const initState = {
     number: 1,
+    url: "http://52.78.147.129:8080/book",
     username: "",
 }
 
