@@ -10,7 +10,7 @@ const MainPage = () => {
     useEffect(() => {
         // 첫번째 then 에 promise 받음(ticket)
         // 두번째 then 에 데이터 넘겨줌
-        fetch(url).then(res => res.json()).then(res => {
+        fetch(url+"/book/").then(res => res.json()).then(res => {
             // console.log(1,res)
             setBooks(res);
         }); // 비동기 함수
