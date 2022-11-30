@@ -38,7 +38,7 @@ const DetailPage = () => {
     }
 
     const updateBook = () => {
-        navigate("/updateform/" + id);
+        navigate("/update-form/" + id);
     }
 
     return (

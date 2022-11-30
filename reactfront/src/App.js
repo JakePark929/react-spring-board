@@ -10,6 +10,7 @@ import LoginForm from "./pages/uesr/LoginForm";
 import JoinForm from "./pages/uesr/JoinForm";
 import DetailPage from "./pages/book/DetailPage";
 import UpdateForm from "./pages/book/UpdateForm";
+import JoinPage from "./pages/uesr/JoinPage";
 
 function App() {
     // App이 상태를 들고 있으면 됨?
@@ -42,11 +43,12 @@ function App() {
             <Container>
                 <Routes>
                     <Route path="/" exact={true} element={<MainPage/>}/>
-                    <Route path="/saveform" exact={true} element={<SaveForm/>}/>
+                    <Route path="/save-form" exact={true} element={<SaveForm/>}/>
                     <Route path="/book/:id" exact={true} element={<DetailPage/>}/>
-                    <Route path="/loginform" exact={true} element={<LoginForm/>}/>
-                    <Route path="/joinform" exact={true} element={<JoinForm/>}/>
-                    <Route path="/updateform/:id" exact={true} element={<UpdateForm/>}/>
+                    <Route path="/login-form" exact={true} element={<LoginForm/>}/>
+                    <Route path="/join-form" exact={true} element={<JoinForm/>}/>
+                    <Route path="/join" exact={true} element={<JoinPage/>}/>
+                    <Route path="/update-form/:id" exact={true} element={<UpdateForm/>}/>
                 </Routes>
             </Container>
             <Footer/>

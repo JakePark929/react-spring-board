@@ -20,7 +20,7 @@ const SaveForm = () => {
 
     const submitBook = (e) => {
         e.preventDefault(); // submit이 action을 안타고 자기 할일을 그만함.
-        fetch(url+"/book/", {
+        fetch(url+"/book", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"

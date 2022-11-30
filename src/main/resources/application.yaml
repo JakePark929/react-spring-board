@@ -13,7 +13,7 @@ spring:
 #    username: sa
 #    password:
   datasource:
-    url: jdbc:mysql://localhost:3306/book
+    url: jdbc:mysql://localhost:3306/security
     username: jake
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -26,3 +26,16 @@ spring:
       naming:
        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+
+  # oauth setting
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 255229286046-hattfsnn2mqqhd72q96ms0rc64k7g2ev.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
