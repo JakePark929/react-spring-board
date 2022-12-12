@@ -1,9 +1,6 @@
 package com.jake.rsboard.domain;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
@@ -15,6 +12,7 @@ import java.sql.Timestamp;
 @Getter
 @ToString
 @Entity
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +23,28 @@ public class User {
     @Setter private String email;
     @Setter private String role; //ROLE_USER, ROLE_ADMIN
 
+    @Setter private String provider;
+    @Setter private String providerId;
 //    @CreationTimestamp
 //    private Timestamp loginDate;
     @CreationTimestamp
     private Timestamp createDate;
+
+    @Builder
+    public User(
+                String userId,
+                String password,
+                String email,
+                String role,
+                String provider,
+                String providerId,
+                Timestamp createDate) {
+        this.userId = userId;
+        this.password = password;
+        this.email = email;
+        this.role = role;
+        this.provider = provider;
+        this.providerId = providerId;
+        this.createDate = createDate;
+    }
 }

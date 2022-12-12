@@ -4,7 +4,9 @@ import {Link, useNavigate} from "react-router-dom";
 
 const LoginForm = () => {
     const navigate = useNavigate();
-    const url = "http://localhost:8080/oauth2/authorization/google"
+    const google = "http://localhost:8080/oauth2/authorization/google"
+    const facebook = "http://localhost:8080/oauth2/authorization/facebook"
+    const naver = "http://localhost:8080/oauth2/authorization/naver"
     // const url = "https://www.naver.com"
     const [user, setUser] = useState({
         userId: "",
@@ -37,14 +39,22 @@ const LoginForm = () => {
             <br/>
             <Button variant="primary"
                     // onClick={() => navigate("/oauth2/authorization/google")}
-                    onClick={()=>{window.location.replace(url)}}
+                    onClick={()=>{window.location.replace(google)}}
             >
                 구글 로그인
             </Button>
-            <Link to={"/oauth2/authorization/google"}
-                  className="nav-link">
-                구글 로그인
-            </Link>
+            <Button variant="primary"
+                // onClick={() => navigate("/oauth2/authorization/facebook")}
+                    onClick={()=>{window.location.replace(facebook)}}
+            >
+                페북 로그인
+            </Button>
+            <Button variant="primary"
+                // onClick={() => navigate("/oauth2/authorization/facebook")}
+                    onClick={()=>{window.location.replace(naver)}}
+            >
+                네이버 로그인
+            </Button>
         </div>
     );
 };

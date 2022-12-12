@@ -11,6 +11,7 @@ import JoinForm from "./pages/uesr/JoinForm";
 import DetailPage from "./pages/book/DetailPage";
 import UpdateForm from "./pages/book/UpdateForm";
 import JoinPage from "./pages/uesr/JoinPage";
+import Temp from "./jsx/Temp";
 
 function App() {
     // App이 상태를 들고 있으면 됨?

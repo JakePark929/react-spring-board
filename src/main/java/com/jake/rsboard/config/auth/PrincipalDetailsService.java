@@ -3,7 +3,6 @@ package com.jake.rsboard.config.auth;
 import com.jake.rsboard.domain.User;
 import com.jake.rsboard.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,6 +21,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     }
 
     // Security ContextHolder: Security Session(내부 Authentication(내부 UserDetails))
+    // 함수 종료시 @AuthenticationPrincipal 어노테이션이 만들어 진다.
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("username: {}", username);
