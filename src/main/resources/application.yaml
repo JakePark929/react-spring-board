@@ -63,9 +63,6 @@ spring:
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8080/login/oauth2/code/naver # naver is needed, any uri
 
-
-
-
   #mailauth setting
   mail:
     host: smtp.gmail.com
