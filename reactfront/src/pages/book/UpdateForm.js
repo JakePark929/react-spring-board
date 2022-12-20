@@ -13,7 +13,7 @@ const UpdateForm = () => {
     });
 
     useEffect(() => {
-        fetch(url + "/" + id)
+        fetch(url+"/book/"+id)
             .then(res => res.json())
             .then(res => {
                 // setBook({...book});
@@ -30,7 +30,7 @@ const UpdateForm = () => {
 
     const submitBook = (e) => {
         e.preventDefault(); // submit이 action을 안타고 자기 할일을 그만함.
-        fetch(url + "/" + id, {
+        fetch(url+"/book/"+id, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"

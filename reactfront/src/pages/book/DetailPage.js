@@ -14,7 +14,8 @@ const DetailPage = () => {
     });
 
     useEffect(() => {
-        fetch(url + "/" + id)
+        // fetch(url + "/" + id)
+        fetch(url+"/book/"+id)
             .then(res => res.json())
             .then(res => {
                 // setBook({...book});
@@ -23,7 +24,7 @@ const DetailPage = () => {
     }, []);
 
     const deleteBook = () => {
-        fetch(url + "/" + id, {
+        fetch(url+"/book/"+id, {
             method: "DELETE",
         })
             .then(res => res.text())
@@ -37,7 +38,7 @@ const DetailPage = () => {
     }
 
     const updateBook = () => {
-        navigate("/updateform/" + id);
+        navigate("/update-form/" + id);
     }
 
     return (

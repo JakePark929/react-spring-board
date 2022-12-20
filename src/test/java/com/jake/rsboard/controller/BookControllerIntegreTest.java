@@ -52,8 +52,8 @@ public class BookControllerIntegreTest {
 //        books.add(new Book(3L, "JUnit 따라하기", "jake"));
 //        bookRepository.saveAll(books);
 
-        entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate(); // h2 test 용
-//        entityManager.createNativeQuery("ALTER TABLE book AUTO_INCREMENT 1").executeUpdate(); // mysql test용
+//        entityManager.createNativeQuery("ALTER TABLE book ALTER COLUMN id RESTART WITH 1").executeUpdate(); // h2 test 용
+        entityManager.createNativeQuery("ALTER TABLE book AUTO_INCREMENT 1").executeUpdate(); // mysql test용
     }
 
 //    @AfterEach

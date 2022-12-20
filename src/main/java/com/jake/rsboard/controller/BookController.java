@@ -2,6 +2,7 @@ package com.jake.rsboard.controller;
 
 import com.jake.rsboard.domain.Book;
 import com.jake.rsboard.service.BookService;
+import com.jake.rsboard.service.EmailSenderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -20,9 +20,9 @@ const BookHeader = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Link to={"/joinform"} className="nav-link">회원가입</Link>
-                            <Link to={"/loginform"} className="nav-link">로그인</Link>
-                            <Link to={"/saveform"} className="nav-link">파일등록</Link>
+                            <Link to={"/join-form"} className="nav-link">회원가입</Link>
+                            <Link to={"/login-form"} className="nav-link">로그인</Link>
+                            <Link to={"/save-form"} className="nav-link">파일등록</Link>
                             <NavDropdown title="Link" id="navbarScrollingDropdown">
                                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action4">
